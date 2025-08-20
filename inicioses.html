@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar Sesión - Plata o Trueque</title>
+  <link rel="stylesheet" href="styloins.css" />
+
+</head>
+<body>
+
+  <header>
+    <h1>Plata o Trueque</h1>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <h2>Iniciar Sesión</h2>
+      <form onsubmit="iniciarSesion(event)">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" required />
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" required />
+
+        <button type="submit" class="btn-iniciar">Entrar</button>
+      </form>
+
+      <div id="mensaje" class="mensaje"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Plata o Trueque. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function iniciarSesion(e) {
+      e.preventDefault();
+      const correo = document.getElementById('correo').value;
+      const contraseña = document.getElementById('contraseña').value;
+
+      if (correo && contraseña) {
+        document.getElementById('mensaje').innerText = `¡Hola de nuevo, ${correo.split("@")[0]}! Has iniciado sesión correctamente.`;
+      } else {
+        document.getElementById('mensaje').innerText = "Por favor, completa todos los campos.";
+      }
+    }
+  </script>
+</body>
+</html>

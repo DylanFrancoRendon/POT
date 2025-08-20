@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --verde: #2CA05A;
+    --morado: #5B3FC9;
+    --blanco: #FFFFFF;
+    --gris-claro: #F0F0F0;
+    --gris-oscuro: #333333;
+}
+
+.menu-btn {
+        background-color: darkcyan;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-family: 'Franklin Gothic Medium';
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--gris-claro);
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: var(--verde);
+    padding: 10px 0;
+    color: var(--blanco);
+    text-align: center;
+}
+
+header .logo img {
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta .btn {
+    background-color: var(--morado);
+    color: var(--blanco);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.cta .btn:hover {
+    background-color: var(--verde);
+}
+
+
+footer {
+    background-color: var(--gris-claro);
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gris-oscuro);
+}
