@@ -1,3 +1,29 @@
+<?php
+include("config.php");
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $correo = $_POST['correo'];
+    $contrasena = $_POST['contrasena'];
+
+    $sql = "SELECT * FROM usuarios WHERE correo='$correo'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        if (password_verify($contrasena, $user['contrasena'])) {
+            $_SESSION['usuario'] = $user['id'];
+            header("Location: perfil.php");
+            exit;
+        } else {
+            echo "❌ Contraseña incorrecta";
+        }
+    } else {
+        echo "❌ Correo no registrado";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,13 +43,16 @@
   </header>
   <main>
     <div class="form-container">
-      <form onsubmit="login(event)">
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" required>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" required>
-        <button type="submit" class="btn">Entrar</button>
-      </form>
+      <form method="POST" action="inicioses.php">
+   <label>Correo:</label>
+   <input type="email" name="correo" required>
+
+   <label>Contraseña:</label>
+   <input type="password" name="contrasena" required>
+
+   <button type="submit">Iniciar sesión</button>
+</form>
+
       <p id="mensaje"></p>
     </div>
   </main>
