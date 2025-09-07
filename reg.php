@@ -35,21 +35,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </header>
   <main>
     <div class="form-container">
-      <form onsubmit="registrar(event)">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required>
-        
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" required>
-        
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" required>
-        
-        <label for="foto">Foto de perfil:</label>
-        <input type="file" id="foto" accept="image/*">
-        
-        <button type="submit" class="btn">Crear cuenta</button>
-      </form>
+      <form method="POST" action="reg.php">
+   <label>Nombre:</label>
+   <input type="text" name="nombre" required>
+
+   <label>Correo:</label>
+   <input type="email" name="correo" required>
+
+   <label>Contraseña:</label>
+   <input type="password" name="contrasena" required>
+
+   <button type="submit">Registrarse</button>
+</form>
+
       <p id="mensaje"></p>
     </div>
   </main>
