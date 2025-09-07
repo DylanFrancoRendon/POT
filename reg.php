@@ -1,3 +1,21 @@
+<?php
+include("config.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $correo = $_POST['correo'];
+    $contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
+
+    $sql = "INSERT INTO usuarios (nombre, correo, contrasena) 
+            VALUES ('$nombre', '$correo', '$contrasena')";
+    if ($conn->query($sql) === TRUE) {
+        echo "✅ Usuario registrado con éxito";
+    } else {
+        echo "❌ Error: " . $conn->error;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
