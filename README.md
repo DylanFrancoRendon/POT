@@ -1,1 +1,2 @@
-# POT
+# PLATA-O-TRUEQUE-DEF
+ya casi
